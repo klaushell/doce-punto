@@ -1,0 +1,14 @@
+services:
+  doce-punto:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: "development"
+    entrypoint: "npm run "
+    command: "start"
+    ports:
+      - "3000:3000"
+    working_dir: "/app_dev"
+    volumes:
+      - "./:/app_dev"
